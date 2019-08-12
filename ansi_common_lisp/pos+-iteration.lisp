@@ -1,0 +1,10 @@
+(defun pos+ (lst)
+  (let ((i 0)
+	(new nil))
+    (dolist (obj lst)
+      (setf obj (+ obj i))
+      (push obj new)
+      (setf i (+ i 1)))
+    (reverse new)))
+
+(format t "~A~%" (pos+ '(1 2 3 4 5)))
