@@ -11,7 +11,7 @@
       (check lst records))))
 
 (defun counts (s lst)
-  (if (equal s (car (car lst)))
+  (if (eql s (car (car lst)))
     (let ((x (pop lst)))
       (setf x (list s (+ (car (cdr x)) 1)))
       (push x lst))
