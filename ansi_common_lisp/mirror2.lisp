@@ -1,0 +1,10 @@
+(defun check-mirror (seq)
+  (let ((len (- (length seq) 1)))
+    (do ((front 0 (+ front 1))
+	 (back len (- back 1)))
+      ((or (> front back)
+	   (not (equal (elt seq front)
+		       (elt seq back))))
+       (> front back)))))
+
+(format t "~A~%" (check-mirror "abcba"))
